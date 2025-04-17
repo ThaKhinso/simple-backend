@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "includes/head.html" %}
+<body>
+    {% include "includes/header.html" %}
+    <main>
+        <form action="/login" method="POST">
+            {% for error in errors %}
+                <p class="notice">{{error}}</p>
+            {% endfor %}
+            <fieldset>
+                <legend>Log In to Your Account</legend>
+                <label for="username" ><small>Username</small></label>
+                <input type="text" id="username" name="username" autocomplete="off">
+
+                <label for="password" ><small>Password</small></label>
+                <input type="password" id="password" name="password" autocomplete="off">
+                <br>
+
+                <button>LogIn</button>
+            </fieldset>
+        </form>
+    </main>
+    {% include "includes/footer.html" %}
+</body>
+</html>

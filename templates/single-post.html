@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "includes/head.html" %}
+<body>
+    {% include "includes/header.html" %}
+    <main>
+        <h1>{{ post.title }}</h1>
+
+        <article>
+            <small>posted by {{ username }} on {{ post.create_date | date(format="%d/%m/%Y %I:%M %p", timezone="Asia/Yangon") }}</small>
+
+            <div>
+                {{ post.content }}
+            </div>
+        </article>
+
+        <a href="/edit-post/{{ post.id }}" class="button">Edit Post</a>
+        <form style="display: inline;" action="/delete-post/{{ post.id }}" method="post">
+            <button>Delete Post</button>
+        </form>
+    </main>
+
+    {% include "includes/footer.html" %}
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "includes/head.html" %}
+<body>
+    {% include "includes/header.html" %}
+    <main>
+        {% for error in errors %}
+            <p class="notice">{{error}}</p>
+        {% endfor %}
+        <form action="/create-post" method="POST">
+            <fieldset>
+                <legend>Create a new post</legend>
+                <label for="title" ><small>title</small></label>
+                <input type="text" id="title" name="title" autocomplete="off">
+
+                <label for="body" ><small>Content</small></label>
+                <textarea name="body" id="body"></textarea>
+                <br>
+
+                <button>Save New Post</button>
+            </fieldset>
+        </form>
+    </main>
+    {% include "includes/footer.html" %}
+</body>
+</html>

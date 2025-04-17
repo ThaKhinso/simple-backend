@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "includes/head.html" %}
+<body>
+    {% include "includes/header.html" %}
+    <main>
+        <h2>Welcome to your dashboard</h2>
+        <ul>
+            {% for post in posts %}
+                <li><a href="/post/{{ post.id }}">{{ post.title }}</a> on {{ post.create_date | date(format="%d/%m/%Y %I:%M %p", timezone="Asia/Yangon") }}</li>
+            {% endfor %}
+        </ul>
+    </main>
+    {% include "includes/footer.html" %}
+</body>
+</html>
